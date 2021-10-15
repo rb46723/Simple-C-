@@ -24,7 +24,8 @@ const char* reverse(char str[])
 char temp; int i,len;
 len=length(str)-1; for(i=0;i<len/2;i++)
 {
-
+temp=str[i]; str[i]=str[len];
+str[len--]=temp;
 }
 return str;
 }
@@ -41,7 +42,8 @@ return s2;
 int main()
 {
 int ch;
-
+printf("** MENU **\n"); printf("1. Length\n"); printf("2. Concatenation\n"); printf("3. Reverse\n"); printf("4. Copy\n");
+printf("5. exit\n"); printf("****\n"); printf("\nEnter your choice: "); scanf("%d",&ch);
 switch(ch)
 {
 case 1:
@@ -52,7 +54,11 @@ printf("length of string %d",l);
 }
 break; case 2:
 {
-
+char string1[25];
+printf("enter the first string\n"); scanf("%s",string1);
+char string2[25];
+printf("enter the second string\n"); scanf("%s",string2); concat(string1,string2);
+printf("string after concatenation : %s",string1);
 }
 break; case 3:
 {
@@ -61,7 +67,7 @@ printf("reverse of the string is : %s",string3);
 }
 break; case 4:
 {
-
+char string4[40],string5[40]; printf("enter the first string\n");
  
 scanf("%s",string4);
 printf("enter the second string\n"); scanf("%s",string5); copy(string4,string5);
